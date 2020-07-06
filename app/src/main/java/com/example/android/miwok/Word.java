@@ -5,21 +5,24 @@ public class Word {
     private String mMiwokTranslation;
     private String mDefaultTranslation;
     private int mImageResourceID = NO_IMAGE_PROVIDED;
+    private int mAudioResourceID;
 
     private static final int NO_IMAGE_PROVIDED = -1;
 
-    public Word(String defaultTranslation, String miwokTranslation) {
+    public Word(String defaultTranslation, String miwokTranslation, int audioResourceID) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mAudioResourceID = audioResourceID;
     }
 
-    public Word(String defaultTranslation, String miwokTranslation, int imageResourceID) {
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceID, int audioResourceID) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImageResourceID = imageResourceID;
+        mAudioResourceID = audioResourceID;
     }
 
-    public String getMiworkTranslation() {
+    public String getMiwokTranslation() {
         return mMiwokTranslation;
     }
 
@@ -33,4 +36,15 @@ public class Word {
         return mImageResourceID != NO_IMAGE_PROVIDED;
     }
 
+    public int getAudioResourceID() { return mAudioResourceID; }
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mMiwokTranslation='" + mMiwokTranslation + '\'' +
+                ", mDefaultTranslation='" + mDefaultTranslation + '\'' +
+                ", mImageResourceID=" + mImageResourceID +
+                ", mAudioResourceID=" + mAudioResourceID +
+                '}';
+    }
 }
